@@ -1,5 +1,6 @@
 {
  "project": "Ninefold",
+ "version": "1.2",
  "generated": "2026-07-23",
  "schema": 1,
  "modules": {
@@ -587,7 +588,7 @@
    "branch": 1,
    "chain_pos": 0,
    "parent": null,
-   "bundle_name": "Sack of String",
+   "bundle_name": "Spool of String",
    "adv_title": "String Theorist",
    "max_stack": 64,
    "texture_hash": "1646a62fec2dd97f5e4aa329ae446c6011a8e8e2d817aeeb8fdc11cc54ec2ebe",

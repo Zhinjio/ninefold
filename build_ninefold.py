@@ -32,6 +32,7 @@ def pack_icon(pack_name):
     if not os.path.exists(path):
         raise SystemExit("missing pack icon: %s" % path)
     return path
+LICENSES = [os.path.join(HERE, n) for n in ("LICENSE", "LICENSE.original")]  # MIT notices, shipped in every pack
 GLOBAL_SRC = os.path.join(HERE, "shared")  # shared Zhinjio tab nodes (root, zhinjio)
 FIXED_DT = (2026, 1, 1, 0, 0, 0)   # deterministic zip timestamps -> stable SHA-1
 
@@ -204,6 +205,13 @@ def dump(path, obj):
         f.write("\n")
 
 
+def copy_licenses(root):
+    for path in LICENSES:
+        if not os.path.exists(path):
+            raise SystemExit("missing license file: %s" % path)
+        shutil.copy2(path, os.path.join(root, os.path.basename(path)))
+
+
 def pack_mcmeta(description):
     return {"pack": {"description": description, "min_format": [121, 0], "max_format": [121, 0]}}
 
@@ -224,6 +232,7 @@ def build_module(mod, mod_meta, items, gc, all_items, out_root):
 
     dump(os.path.join(root, "pack.mcmeta"), pack_mcmeta(mod_meta["display"]))
     shutil.copy2(pack_icon("ninefold_%s" % mod), os.path.join(root, "pack.png"))
+    copy_licenses(root)
 
     adv = os.path.join(root, "data", ns, "advancement")
     rec = os.path.join(root, "data", ns, "recipe")
@@ -265,6 +274,7 @@ def build_aio(module_dirs, out_root, description):
                 shutil.copy2(src, dst)
     dump(os.path.join(root, "pack.mcmeta"), pack_mcmeta(description))
     shutil.copy2(pack_icon("ninefold"), os.path.join(root, "pack.png"))
+    copy_licenses(root)
     return root
 
 
@@ -311,14 +321,14 @@ def main():
         n = sum(len(fs) for _, _, fs in os.walk(d))
         print("  built %-28s %3d files" % ("ninefold_%s" % mod, n))
         if args.zip:
-            shas["ninefold_%s" % mod] = zip_pack(d, d + ".zip")
+            shas["ninefold_%s" % mod] = zip_pack(d, "%s-%s.zip" % (d, m["version"]))
 
     if not only:
         aio = build_aio(dirs, args.out, m["project"])
         n = sum(len(fs) for _, _, fs in os.walk(aio))
         print("  built %-28s %3d files (union)" % ("ninefold (AIO)", n))
         if args.zip:
-            shas["ninefold"] = zip_pack(aio, aio + ".zip")
+            shas["ninefold"] = zip_pack(aio, "%s-%s.zip" % (aio, m["version"]))
 
     if shas:
         print("\n  deterministic SHA-1:")
