@@ -1,3 +1,17 @@
+# Changelog
+
+## Ninefold 1.1 (2026-11-23)
+
+- Satchels are now built on a music disc instead of a poisonous potato. Opening a satchel no longer counts as eating, so it no longer triggers food advancements from other packs. Satchels made in 1.0 still open, but don't count toward the capstone advancements.
+
+## Ninefold 1.0 (2026-11-23)
+
+- First release, for Minecraft 26.3. FoodBundler's food items, plus seeds, plants and mob drops: 85 satchels in five modules, or all together in one pack.
+- Satchels look like heads but can't be placed, so they can't be duplicated.
+- Each module has a capstone advancement, and collecting every satchel earns The Whole Nine Yards.
+
+## FoodBundler history
+
 ![Food Bundler Banner](https://cdn.modrinth.com/data/cached_images/ee2a4924985cf467254013057b89e792cf69a10a.png)
 ## Version History
 Fri, 6 Jun 2025 00:33:16 -0600 (Zhinjio) #f0d42c9# : Added Red and Brown Mushroom<br />

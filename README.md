@@ -1,31 +1,69 @@
 # Ninefold
 
-**FoodBundler is becoming Ninefold.** This repo (formerly `FoodBundler`) is now home to its successor: a modular expansion of the same idea — compress stackable items 9→1, hay-bale style, and pop them back with a right-click — grown beyond food with the blessing of [efeketket](https://modrinth.com/user/efeketket), author of the original Stackraft.
+Craft 9 of a food, seed, plant or mob drop into one satchel. Right-click the satchel to get the 9 back.
 
-Ninefold ships as five standalone modules — **Seeds, Raw Food, Cooked Food, Mob Drops, and Plants** (~87 items) — plus an all-in-one bundle, targeting Minecraft 26.2. It is **in active development**; nothing is released yet.
+Ninefold is a pure datapack for Minecraft 26.3. It is the successor to FoodBundler, and grew out of [efeketket's Stackraft](https://modrinth.com/datapack/stackraft), with the author's blessing.
 
-**FoodBundler v1.1.4** is the final release under the old name (MC 1.21.6–1.21.8) and remains available [on Modrinth](https://modrinth.com/datapack/foodbundler). It's preserved here at the tag `foodbundler-v1.1.4`.
+## Modules
 
----
-*The original FoodBundler README follows below, preserved for the curious.*
+Ninefold comes as one all-in-one pack, or as five modules that each work on their own:
 
-![Food Bundler Banner](https://cdn.modrinth.com/data/cached_images/ee2a4924985cf467254013057b89e792cf69a10a.png)
-## History
-FoodBundler was inspired by [efeketket's Stackraft](https://modrinth.com/datapack/stackraft). I wanted to change a few things, and of course, bring it up to date with 1.21.5. I was also looking for a good place to sink my teeth into this whole datapack thing, so off I went. This is the result. My first datapack (so be gentle), and basically a complete rewrite of the original. In the spirit of the good will of modding and all that, I've maintained the original license in this datapack as well.
-## Description
-So what does it do? It allows you to compress most food related items into a 9:1 stackable block. Think, basically, exactly like a hay bale, but for all the remaining food items as well. Removed from the original are the non-food items, like gunpowder, that Stackraft gave recipes for as well. I wanted to stick to food items, so those have been removed. I've also added some that were notably missing from the original as well, and included most seeds too.
-## Instructions
-- Getting a full stack of the compress-able items will give you an advancement and the recipe.
-- Uncompress an item by holding it in your hand and right click (use) to pop the uncompressed items into your inventory
+| Module | Items | Capstone advancement |
+|---|---|---|
+| Seeds | 5 | Seed Sovereign |
+| Raw Food | 25 | Larder Legend |
+| Cooked Food | 9 | Executive Chef |
+| Mob Drops | 20 | Trophy Hunter |
+| Plants | 26 | Green Thumb |
+
+Collect every satchel in all five for **The Whole Nine Yards**.
+
+<details>
+<summary>Full item list</summary>
+
+- **Seeds:** wheat seeds, beetroot seeds, pumpkin seeds, melon seeds, cocoa beans
+- **Raw Food:** egg, blue egg, brown egg, honeycomb, red mushroom, brown mushroom, apple, potato, beetroot, chorus fruit, carrot, golden carrot, sugar cane, pumpkin, sweet berries, glow berries, kelp, raw beef, raw chicken, raw mutton, raw porkchop, raw rabbit, raw salmon, raw cod, tropical fish
+- **Cooked Food:** cookie, bread, steak, cooked chicken, cooked mutton, cooked porkchop, cooked rabbit, cooked salmon, cooked cod
+- **Mob Drops:** ender pearl, blaze rod, breeze rod, string, rotten flesh, spider eye, gunpowder, phantom membrane, leather, feather, rabbit hide, sea pickle, verdant froglight, pearlescent froglight, ochre froglight, armadillo scute, turtle scute, shulker shell, ink sac, glow ink sac
+- **Plants:** allium, azure bluet, dandelion, lily of the valley, oxeye daisy, poppy, red tulip, orange tulip, white tulip, pink tulip, blue orchid, closed eyeblossom, open eyeblossom, lilac, peony, rose bush, sunflower, torchflower, wither rose, leaf litter, pink petals, wildflowers, chorus flower, spore blossom, cactus, cactus flower
+
+</details>
+
+## How it works
+
+- Hold a full stack of an item and you unlock its satchel recipe, with an advancement.
+- Craft 9 of the item into one satchel. Satchels stack to 64.
+- Right-click a satchel to get the 9 items back.
+- Satchels look like heads, but can't be placed. Keep them in chests.
+- Advancements appear under Zhinjio in the "Installed Datapacks" tab.
+
+## Vanilla friendly
+
+No resource pack and no client install. No functions either: Ninefold is only recipes and advancements, so nothing runs every tick.
+
+## Building from source
+
+The datapacks are generated from `items-manifest.json` by `build_ninefold.py` (Python 3, no dependencies):
+
+```
+python3 build_ninefold.py --zip
+```
+
+This writes the five modules and the all-in-one, as folders and zips, to `build/`. Zips are deterministic, so the same source always gives the same SHA-1.
+
+Releases are published on [Modrinth](https://modrinth.com/datapack/ninefold).
+
+## FoodBundler
+
+FoodBundler v1.1.4 (Minecraft 1.21.6 to 1.21.8) was the last release under the old name. It is preserved at the tag `foodbundler-v1.1.4` and on [Modrinth](https://modrinth.com/datapack/foodbundler), where it is archived.
+
 ## Support
-Thanks so much to [NiceRon](https://modrinth.com/user/NiceRon) and the crew at the [Explorer's Eden](https://modrinth.com/organization/explorers-eden) for kindly allowing me to use their Discord as a place to park my butt and provide chat support for this datapack. They've been incredibly helpful and patient as I learn how this stuff all works and providing mentoring!
 
-## Releases
-I don't create releases here on github, as it is particularly meaningful in this context. However, you can find the latest meaningful pushes [hosted on modrinth](https://modrinth.com/datapack/foodbundler). 
+Thanks so much to [NiceRon](https://modrinth.com/user/NiceRon) and the crew at [Explorer's Eden](https://modrinth.com/organization/explorers-eden) for letting me use their Discord for chat support, and for all the help and mentoring while I learned how this stuff works.
 
 ## Credits
-Inspiration from [efeketket's Stackraft](https://modrinth.com/datapack/stackraft)<br/>
-Logo generated by [Text Studio Font Generator](https://www.textstudio.com/)<br/>
+
+Inspired by [efeketket's Stackraft](https://modrinth.com/datapack/stackraft). The original license is kept in `LICENSE.original`.<br/>
 Head textures courtesy of the amazing community at Minecraft-Heads.com:
 
 [![Minecraft-Heads.com](https://images.minecraft-heads.com/banners/minecraft-heads.webp)](https://minecraft-heads.com/)
