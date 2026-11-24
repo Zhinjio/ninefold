@@ -1,3 +1,5 @@
+![Ninefold](assets/banners/ninefold-banner.png)
+
 # Ninefold
 
 Craft 9 of a food, seed, plant or mob drop into one satchel. Right-click the satchel to get the 9 back.
@@ -64,6 +66,7 @@ Thanks so much to [NiceRon](https://modrinth.com/user/NiceRon) and the crew at [
 ## Credits
 
 Inspired by [efeketket's Stackraft](https://modrinth.com/datapack/stackraft). The original license is kept in `LICENSE.original`.<br/>
+Logo made with the TextStudio <a href="https://www.textstudio.com/">Font generator</a>.<br/>
 Head textures courtesy of the amazing community at Minecraft-Heads.com:
 
 [![Minecraft-Heads.com](assets/minecraft-heads.webp)](https://minecraft-heads.com/)
