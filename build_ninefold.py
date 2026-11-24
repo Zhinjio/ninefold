@@ -24,7 +24,14 @@ import argparse, base64, hashlib, json, os, shutil, struct, zipfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MANIFEST = os.path.join(HERE, "items-manifest.json")
-PACK_PNG = os.path.join(HERE, "pack.png")
+ICONS = os.path.join(HERE, "assets", "icons")   # <pack>-icon.png, copied in as each pack's pack.png
+
+
+def pack_icon(pack_name):
+    path = os.path.join(ICONS, "%s-icon.png" % pack_name)
+    if not os.path.exists(path):
+        raise SystemExit("missing pack icon: %s" % path)
+    return path
 GLOBAL_SRC = os.path.join(HERE, "shared")  # shared Zhinjio tab nodes (root, zhinjio)
 FIXED_DT = (2026, 1, 1, 0, 0, 0)   # deterministic zip timestamps -> stable SHA-1
 
@@ -216,8 +223,7 @@ def build_module(mod, mod_meta, items, gc, all_items, out_root):
     rep = rep_item_for(items)
 
     dump(os.path.join(root, "pack.mcmeta"), pack_mcmeta(mod_meta["display"]))
-    if os.path.exists(PACK_PNG):
-        shutil.copy2(PACK_PNG, os.path.join(root, "pack.png"))
+    shutil.copy2(pack_icon("ninefold_%s" % mod), os.path.join(root, "pack.png"))
 
     adv = os.path.join(root, "data", ns, "advancement")
     rec = os.path.join(root, "data", ns, "recipe")
@@ -258,8 +264,7 @@ def build_aio(module_dirs, out_root, description):
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
                 shutil.copy2(src, dst)
     dump(os.path.join(root, "pack.mcmeta"), pack_mcmeta(description))
-    if os.path.exists(PACK_PNG):
-        shutil.copy2(PACK_PNG, os.path.join(root, "pack.png"))
+    shutil.copy2(pack_icon("ninefold"), os.path.join(root, "pack.png"))
     return root
 
 
