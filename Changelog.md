@@ -1,5 +1,12 @@
 # Changelog
 
+## Ninefold 1.2 (2026-11-24)
+
+- First release on Modrinth.
+- The string satchel is now a Spool of String. String satchels made before 1.2 keep their old name and still open normally.
+- Each pack has its own icon.
+- Every download now includes the MIT license, along with the original Stackraft license.
+
 ## Ninefold 1.1 (2026-11-23)
 
 - Satchels are now built on a music disc instead of a poisonous potato. Opening a satchel no longer counts as eating, so it no longer triggers food advancements from other packs. Satchels made in 1.0 still open, but don't count toward the capstone advancements.
