@@ -66,4 +66,4 @@ Thanks so much to [NiceRon](https://modrinth.com/user/NiceRon) and the crew at [
 Inspired by [efeketket's Stackraft](https://modrinth.com/datapack/stackraft). The original license is kept in `LICENSE.original`.<br/>
 Head textures courtesy of the amazing community at Minecraft-Heads.com:
 
-[![Minecraft-Heads.com](https://images.minecraft-heads.com/banners/minecraft-heads.webp)](https://minecraft-heads.com/)
+[![Minecraft-Heads.com](assets/minecraft-heads.webp)](https://minecraft-heads.com/)
